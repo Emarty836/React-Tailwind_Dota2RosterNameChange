@@ -116,7 +116,6 @@ img{
   top:10px;
   z-index:1;
   margin-top:80px;
-  border:solid 10px solid;
   left:50%;
   transform: translateX(-50%);
 }
