@@ -1,0 +1,414 @@
+body{
+    background:black;
+    margin: auto 0;
+}
+
+#projectTitle{
+    font-size:40px;
+  }
+  
+  #titleBar{
+    color:white;
+    width:100%;
+    height:180px;  /* Height of Navbar --------------------------------------*/
+    background: rgb(95, 0, 0);
+    margin:auto 0;
+    margin-top:-20px;
+    padding:0;
+    text-align: center;
+    text-transform: uppercase;
+    position:fixed;
+    z-index:9;
+  }
+
+
+  
+  #purpose{
+    display:flex;
+    justify-content:space-around;
+    padding:0;
+  }
+
+  #lower{
+    text-transform: capitalize;
+        position:absolute;
+        top:115px;
+        width:90%;
+        left:50%;
+        transform:translateX(-50%);
+  }
+
+  /* --------------------------------------------------------------------- Roster section ------------------------------------------------------------------*/
+
+  .heroRoster{
+    position:relative;
+    top:200px;  /*   Hero section distance from top --------------------------*/
+  }
+
+.strength, .agilities, .intelligence{
+    margin:20px auto;
+    width:1430px;
+    height:650px;
+    display:grid;
+    grid-template-columns:100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px;
+    grid-template-rows:140px 140px 140px 140px;
+    gap:20px;
+    padding:15px;
+    /*border:solid 1px white;  ----- for sizing width purposes*/
+    margin-bottom:60px;
+}
+
+
+.strength > .frame > p{
+    background:rgb(90, 7, 7);
+}
+
+.agilities > .frame > p{
+    background:rgb(24, 102, 24);
+}
+
+
+.intelligence > .frame > p{
+    background:rgb(9, 103, 119);
+}
+
+
+p{
+    width:100%;
+    height:40px;
+    color:white;
+    text-align:center;
+    font-family:arial;
+    margin:0;
+    margin-top:-5px;
+    padding-top:2px;
+}
+
+
+
+img{
+    width:100px;
+    height:100px; /* can adjust to cover text*/
+    margin:0;
+}
+.frame{
+    
+    width:100px;
+    height:140px;  /*---*/
+    border:solid 2px white;
+}
+
+/* ----------------------------------------------------------------------------------- Button ----------------------------------------------------------------*/
+.buttonSet{
+    
+    width:110px;
+    height:50px;
+    background:grey;
+    display:flex;
+    justify-content:space-between;
+    position:relative;
+    align-items:center;
+    color:white;
+    font-family:arial;
+    top:10px;
+    z-index:1;
+    margin-top:80px;
+}
+
+.switch{
+    width:60px;
+    height:40px;
+  }
+
+#on{
+    background:rgb(26, 92, 26);
+    width:50px;
+    height:50px;
+}
+
+#off{
+    background:rgb(157, 8, 8);
+    width:50px;
+    height:50px;
+}
+
+/*---------------------------------------  filters ----------------------------------------------------------------------------------------------*/
+
+.carry{
+    opacity:.2;
+}
+
+.buttonSet, .filters{
+    position:fixed;
+    
+}
+
+
+.filters{
+    right: 0;
+    transform:translate(-10%, -50%);
+    display:flex;
+    /*border:solid 1px white;*/
+    justify-content: space-between;
+   top:100px;
+   width:200px;
+   color:white;
+   z-index:9;
+}
+
+.filters > div{
+    width:80px;
+    height:40px;
+    margin:20px auto;
+    font-size:25px;
+    text-align:center;
+    border:solid 1px black;
+    box-shadow:0 0 3px 2px white;
+    color:white;
+}
+
+.carryFilter{
+    background:rgb(26, 0, 0);
+}
+
+.supportFilter{
+    background:rgb(49, 1, 41);
+}
+
+.carryFilter:hover, .supportFilter:hover, #on:hover, #off:hover{
+    cursor:pointer;
+} 
+
+#on:hover, #off:hover{
+    box-shadow: 0 0 2px 2px white;
+}
+
+.carryFilter:hover, .supportFilter:hover{
+    background:white;
+    color:black;
+}
+
+
+/* ----------------------------------------------------------------------------------  Media Query-----------------------------------------------------*/
+
+@media screen and (max-width:1600px) {
+    .strength, .agilities, .intelligence{
+        display:grid;
+        height:800px;
+        width:1070px;
+        grid-template-columns:100px 100px 100px 100px 100px 100px 100px 100px 100px;
+        grid-template-rows:140px 140px 140px 140px;
+        gap:20px;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .strength, .agilities, .intelligence{
+        display:grid;
+        height:1150px;
+        width:700px;
+        grid-template-columns:100px 100px 100px 100px 100px 100px;
+        grid-template-rows:140px 140px 140px 140px 140px 140px 140px 140px;
+        gap:20px;
+    }
+
+    .intelligence{
+        height: 1300px;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .filters{
+        left:50%;
+        transform:translate(-50%,-100%);
+        width:250px;
+        top:100%;
+    }
+    #lower{
+        font-size:14px;
+        position:absolute;
+        top:110px;
+        width:90%;
+        left:50%;
+        transform:translateX(-50%);
+        height:40px;
+    }
+    .heroRoster{
+        margin-bottom:100px;
+    }
+    .strength, .agilities, .intelligence{
+        
+        width:430px;
+        grid-template-columns:130px 130px 130px;
+        grid-template-rows:150px 150px 150px 150px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        
+    }
+
+    .strength{
+        height:2450px;
+    }
+
+    .agilities{
+        height:2250px;
+    }
+
+    .intelligence{
+        height:2580px;
+        padding-bottom:50px;
+    }
+
+    
+    
+    img{
+        width:120px;
+        height:110px; /* can adjust to cover text*/
+        margin:0;
+    }
+    .frame{
+        
+        width:120px;
+        height:150px;  /*---*/
+    }
+    .buttonSet{
+        top:0px;
+    }
+}
+/* sized */
+@media screen and (max-width:500px) {
+    #projectTitle{
+        font-size:35px;
+        padding-top:5px;
+      }
+   
+    .strength, .agilities, .intelligence{
+        
+        width:335px;
+        grid-template-columns:150px 150px;
+        grid-template-rows:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        column-gap:30px;
+    }
+
+    .strength{
+        height:4250px;
+    }
+
+    .agilities{
+        height:3700px;
+    }
+
+    .intelligence{
+        height:4300px;
+        
+    }
+
+    
+    
+    img{
+        width:150px;
+        height:130px; /* can adjust to cover text*/
+        
+    }
+    .frame{
+        
+        width:150px;
+        height:170px;
+    }
+
+    
+}
+
+@media screen and (max-width:400px) {
+    #projectTitle{
+        font-size:31px;
+        padding-top:8px;
+      }
+    #lower{
+        font-size:11.8px;
+    }
+    .heroRoster{
+        margin-bottom:100px;
+    }
+    .strength, .agilities, .intelligence{
+        
+        width:255px;
+        grid-template-columns:110px 110px;
+        grid-template-rows:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        column-gap:30px;
+    }
+
+    .strength{
+        height:4050px;
+    }
+
+    .agilities{
+        height:3500px;
+    }
+
+    .intelligence{
+        height:4000px;
+        
+    }
+
+
+    img{
+        width:110px;
+        height:120px; /* can adjust to cover text*/
+        
+    }
+    .frame{
+        
+        width:110px;
+        height:160px;
+    }
+    
+}
+
+@media screen and (max-width:300px) {
+    #lower{
+        font-size:11px;
+        top:110px;
+    }
+    .heroRoster{
+        margin-bottom:100px;
+    }
+    .strength, .agilities, .intelligence{
+        width:205px;
+        grid-template-columns:95px 95px;
+        grid-template-rows:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        column-gap:15px;
+    }
+
+    .strength{
+        height:3650px;
+    }
+
+    .agilities{
+        height:3300px;
+    }
+
+    .intelligence{
+        height:4000px;
+    }
+
+    
+    
+    img{
+        width:95px;
+        height:110px; /* can adjust to cover text*/
+        margin:0;
+    }
+    .frame{
+        
+        width:95px;
+        height:150px;  /*---*/
+        border:solid 2px white;
+    }
+}
+
+@media screen and (max-width:250px) {
+    #projectTitle{
+        font-size:25px;
+        padding-top:8px;
+      }
+}
+
