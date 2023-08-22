@@ -135,7 +135,7 @@ const App = () => {
           <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={showImage ? scorpion : shadowShaman} alt={showImage ? 'image 2' : 'image 1'}/><p>Shadow Shaman</p></div>
           <div className='frame'><img src={silencer} alt={showImage ? 'image 2' : 'image 1'}/><p>Silencer</p></div>
           <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={showImage ? shaiapouf : skywrath} alt={showImage ? 'image 2' : 'image 1'}/><p>Skywrath Mage</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={stormSpirit} alt={showImage ? 'image 2' : 'image 1'}/><p>Storm Spirit</p></div>
+          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={showImage ? genie : stormSpirit} alt={showImage ? 'image 2' : 'image 1'}/><p>Storm Spirit</p></div>
           <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={tinker} alt={showImage ? 'image 2' : 'image 1'}/><p>Tinker</p></div>
           <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={warlock} alt={showImage ? 'image 2' : 'image 1'}/><p>Warlock</p></div>
           <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={witchDoctor} alt={showImage ? 'image 2' : 'image 1'}/><p>Witch Doctor</p></div>
