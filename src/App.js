@@ -1,4 +1,5 @@
-import './App.css';
+// import './App.css';  ---  This is my regular CSS files before trying Tailwind!!! 
+import './AppTail.css';
 import React, {useState} from 'react';
 import ToggleButton from './ToggleButton';
 import FilterButtons from './FilterButtons';
@@ -25,9 +26,8 @@ const App = () => {
   return (
     <>
     {/* START */}
-    <div id='titleBar'>
-      <h1 id='projectTitle'>DOTA 2 ROSTER</h1>
-      
+    <div className='text-white w-full h-48 z-10 bg-red-900 mx-auto mb-0 -mt-5 p-0 text-center uppercase fixed'>
+      <h1 className= 'text-2xl  ssm:text-4xl sm:text-5xl pt-4 mt-4'>DOTA 2 ROSTER</h1> 
       <ToggleButton
         onToggleOn={() => {
           setShowImage(true);
@@ -36,11 +36,11 @@ const App = () => {
           setShowImage(false);
         }}
       />
-      <span id='lower'>Note: I do not own these pictures and this website is not for commercial purposes, just for personal use.</span>
-      </div>
+      <span className= 'relative top-16 text-xs sm:text-base'>Note: I do not own these pictures and this website is not for commercial purposes, just for personal use.</span>
+    </div>
 
 {/* showCarry, showSupport, showCarry || showSupport*/}
-<section className="heroRoster">
+<section className="pt-44 -mb-8 sm:mb-16">
         <div className="strength">
             <div className='frame'><img src={showImage ? shrek: alchemist} alt={showImage ? 'image 2' : 'image 1'}/><p>Alchemist</p></div>
             <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={showImage ? ceb: axe} alt={showImage ? 'image 2' : 'image 1'}/><p>Axe</p></div>

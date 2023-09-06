@@ -2,9 +2,9 @@ import React from 'react';
 
 const ToggleButton = ({ onToggleOn, onToggleOff }) => {
   return (
-    <div className='buttonSet'>
-      <button onClick={onToggleOn} className='green'>ON</button>
-      <button onClick={onToggleOff} className='red'>OFF</button>
+    <div className='w-28 h-12 bg-gray-600 flex justify-between fixed text-white font-sans z-1 mt-2 left-1/2 -translate-x-1/2'>
+      <button onClick={onToggleOn} className='bg-green-800 hover:bg-green-900 h-12 w-12 cursor-pointer group'>ON</button>
+      <button onClick={onToggleOff} className='bg-red-800 hover:bg-red-700 h-12 w-12 cursor-pointer group'>OFF</button>
     </div>
   );
 };

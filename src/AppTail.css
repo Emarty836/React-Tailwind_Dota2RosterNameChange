@@ -1,47 +1,13 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 body{
   background:black;
   margin: auto 0;
   font-family: 'Times New Roman', Times, serif;
 }
 
-#projectTitle{
-  font-size:40px;
-}
-
-#titleBar{
-  color:white;
-  width:100%;
-  height:180px;  /* Height of Navbar --------------------------------------*/
-  background: rgb(95, 0, 0);
-  margin:auto 0;
-  margin-top:-20px;
-  padding:0;
-  text-align: center;
-  text-transform: uppercase;
-  position:fixed;
-  z-index:9;
-}
-
-#purpose{
-  display:flex;
-  justify-content:space-around;
-  padding:0;
-}
-
-#lower{
-  text-transform: capitalize;
-      position:relative;
-       top:50px;
-      width:90%;
-      /* left:50%;
-      transform:translateX(-50%); */
-      /* border:solid 1px black; */
-}
-
-.heroRoster{
-  position:relative;
-  top:200px;  /*   Hero section distance from top --------------------------*/
-}
 
 .strength, .agilities, .intelligence, .universal{
   margin:20px auto;
@@ -83,8 +49,9 @@ p{
   text-align:center;
   font-family:arial;
   margin:0;
-  margin-top:-5px;
+  margin-top:0px;
   padding-top:2px;
+  line-height:20px;
 }
 
 
@@ -100,72 +67,16 @@ img{
   border:solid 2px white;
 }
 
-/* --------------------------------button-------------------------------------------------- */
-
-.buttonSet{
-    
-  width:110px;
-  height:50px;
-  background:grey;
-  display:flex;
-  justify-content:space-between;
-  position:relative;
-  align-items:center;
-  color:white;
-  font-family:arial;
-  top:0px;
-  z-index:1;
-  margin-top:80px;
-  left:50%;
-  transform: translateX(-50%);
-}
-
-.switch{
-  width:60px;
-  height:40px;
-}
-
- .red{
-  background:rgb(157, 8, 8);
-  width:50px;
-    height:50px;
-}
-
-.green{
-  background:rgb(26, 92, 26);
-  width:50px;
-    height:50px;
-}
-
-.heroBox{
-  height:140px;
-  width:100px;
-} 
-
-
-
 /* -----------------------------------Filter-------------------------------- */
-.buttonSet, .filters{
-  position:fixed;
+.group:hover{
+  box-shadow: 0 0 2px 2px white;
 }
 
 .filterHighlight{
   opacity:.2;
 } 
 
-.filters{
-  right: 0;
-  transform:translate(-10%, -50%);
-  display:flex;
-  /*border:solid 1px white;*/
-  justify-content: space-between;
- top:100px;
- width:200px;
- color:white;
- z-index:9;
-}
-
-.filters > div{
+.filterButton{
   width:80px;
   height:40px;
   margin:20px auto;
@@ -175,26 +86,9 @@ img{
   box-shadow:0 0 3px 2px white;
   font-family: 'Times New Roman', Times, serif;
   color:white;
-
 }
 
-.carryFilter{
-  background:rgb(26, 0, 0);
-}
-
-.supportFilter{
-  background:rgb(49, 1, 41);
-}
-
-.carryFilter:hover, .supportFilter:hover, .green:hover, .red:hover{
-  cursor:pointer;
-} 
-
-.green:hover, .red:hover{
-  box-shadow: 0 0 2px 2px white;
-}
-
-.carryFilter:hover, .supportFilter:hover{
+.group1:hover{
   background:white;
   color:black;
 }
@@ -229,30 +123,11 @@ img{
 }
 
 @media screen and (max-width:800px) {
-  .filters{
-      left:50%;
-      transform:translate(-50%,-100%);
-      width:250px;
-      top:100%;
-  }
-  #lower{
-      font-size:14px;
-      position:absolute;
-      top:140px;
-      width:90%;
-      left:50%;
-      transform:translateX(-50%);
-      height:40px;
-  }
-  .heroRoster{
-      margin-bottom:100px;
-  }
+  
   .strength, .agilities, .intelligence, .universal{
-      
       width:430px;
       grid-template-columns:130px 130px 130px;
-      grid-template-rows:150px 150px 150px 150px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-      
+      grid-template-rows:150px 150px 150px 150px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
   }
 
   .strength{
@@ -284,9 +159,6 @@ img{
       
       width:120px;
       height:150px;  /*---*/
-  }
-  .buttonSet{
-      top:0px;
   }
 }
 /* sized */
@@ -336,13 +208,6 @@ img{
 }
 
 @media screen and (max-width:400px) {
-  #projectTitle{
-      font-size:31px;
-      padding-top:8px;
-    }
-  #lower{
-      font-size:11.8px;
-  }
   .heroRoster{
       margin-bottom:100px;
   }
@@ -385,10 +250,7 @@ img{
 }
 
 @media screen and (max-width:300px) {
-  #lower{
-      font-size:11px;
-      top:140px;
-  }
+  
   .heroRoster{
       margin-bottom:100px;
   }
