@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/React-Dota2RosterNameChange/static/css/main.ed168808.css",
-    "main.js": "/React-Dota2RosterNameChange/static/js/main.b9362b13.js",
+    "main.css": "/React-Dota2RosterNameChange/static/css/main.020d01e2.css",
+    "main.js": "/React-Dota2RosterNameChange/static/js/main.17cb1c1f.js",
     "static/media/General_Grievous.png": "/React-Dota2RosterNameChange/static/media/General_Grievous.024ddd8e4e4bb084c79d.png",
     "static/media/benedict-barone-katoglou-phoenix-low.jpeg": "/React-Dota2RosterNameChange/static/media/benedict-barone-katoglou-phoenix-low.ae20bbe85e5bb5e69286.jpeg",
     "static/media/ashoka_tanp.jpeg": "/React-Dota2RosterNameChange/static/media/ashoka_tanp.d23e7250af4819ddac64.jpeg",
@@ -74,11 +74,11 @@
     "static/media/pussnboots.jpeg": "/React-Dota2RosterNameChange/static/media/pussnboots.cde390360b82e01ce933.jpeg",
     "static/media/Manny.png": "/React-Dota2RosterNameChange/static/media/Manny.34e8afbeffff099f8b2e.png",
     "index.html": "/React-Dota2RosterNameChange/index.html",
-    "main.ed168808.css.map": "/React-Dota2RosterNameChange/static/css/main.ed168808.css.map",
-    "main.b9362b13.js.map": "/React-Dota2RosterNameChange/static/js/main.b9362b13.js.map"
+    "main.020d01e2.css.map": "/React-Dota2RosterNameChange/static/css/main.020d01e2.css.map",
+    "main.17cb1c1f.js.map": "/React-Dota2RosterNameChange/static/js/main.17cb1c1f.js.map"
   },
   "entrypoints": [
-    "static/css/main.ed168808.css",
-    "static/js/main.b9362b13.js"
+    "static/css/main.020d01e2.css",
+    "static/js/main.17cb1c1f.js"
   ]
 }
