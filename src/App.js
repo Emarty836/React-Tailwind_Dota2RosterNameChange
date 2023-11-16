@@ -23,7 +23,7 @@ const App = () => {
       setfilterSupport(!filterSupport);
    };
 
- ///////////////////// - I wanted to add API calls to this repo instead of simply typing each heroes (124) inside the section line 66------------------------------------
+ ///////////////////// - I wanted to add API calls to this repo instead of simply typing each heroes (124) inside the section line 316------------------------------------
  
  //---------------------- The changes made were replacing the text between each <p> tag with each individual state gathered from useEffect that fetched the API.
   const [AntiMageT, setAntiMage] = useState([]);
