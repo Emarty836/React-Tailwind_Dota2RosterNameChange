@@ -163,11 +163,6 @@ img{
 }
 /* sized */
 @media screen and (max-width:500px) {
-  #projectTitle{
-      font-size:35px;
-      padding-top:5px;
-    }
- 
   .strength, .agilities, .intelligence, .universal{
       
       width:335px;
@@ -208,9 +203,7 @@ img{
 }
 
 @media screen and (max-width:400px) {
-  .heroRoster{
-      margin-bottom:100px;
-  }
+  
   .strength, .agilities, .intelligence, .universal{
       
       width:255px;
@@ -250,10 +243,6 @@ img{
 }
 
 @media screen and (max-width:300px) {
-  
-  .heroRoster{
-      margin-bottom:100px;
-  }
   .strength, .agilities, .intelligence, .universal{
       width:205px;
       grid-template-columns:95px 95px;
@@ -292,10 +281,10 @@ img{
   }
 }
 
-@media screen and (max-width:250px) {
+/* @media screen and (max-width:250px) {
   #projectTitle{
       font-size:25px;
       padding-top:8px;
     }
-}
+} */
 
