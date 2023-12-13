@@ -16,14 +16,24 @@ const App = () => {
   const [showImage, setShowImage] = useState(false);
   const [filterCarry, setfilterCarry] = useState(false);
   const [filterSupport, setfilterSupport] = useState(false);
+  const [filterHealer, setfilterHealer] = useState(false);
+  const [selectedCarry, setSelectedCarry] = useState(null);
+  const [selectedSupport, setSelectedSupport] = useState(null);
+  const [selectedHealer, setSelectedHealer] = useState(null);
   const toggleCarry = () => {
        setfilterCarry(!filterCarry);
+       setSelectedCarry(selectedCarry === 'carry' ? null : 'carry');
     };
-    const toggleSupport = () => {
+  const toggleSupport = () => {
       setfilterSupport(!filterSupport);
+      setSelectedSupport(selectedSupport === 'support' ? null : 'support');
    };
+   const toggleHealer = () => {
+      setfilterHealer(!filterHealer);
+      setSelectedHealer(selectedHealer === 'healer' ? null : 'healer');
+ };
 
- ///////////////////// - I wanted to add API calls to this repo instead of simply typing each heroes (124) inside the section line 66------------------------------------
+ ///////////////////// - I wanted to add API calls to this repo instead of simply typing each heroes (124) inside the section line 316------------------------------------
  
  //---------------------- The changes made were replacing the text between each <p> tag with each individual state gathered from useEffect that fetched the API.
   const [AntiMageT, setAntiMage] = useState([]);
@@ -315,138 +325,136 @@ useEffect(() => {
 {/* showCarry, showSupport, showCarry || showSupport*/}
 <section className="pt-44 -mb-8 sm:mb-16">
         <div className="strength">
-            <div className='frame'><img src={showImage ? shrek: alchemist} alt={showImage ? 'image 2' : 'image 1'}/><p>{AlchemistT}</p></div>
-            <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={showImage ? ceb: axe} alt={showImage ? 'image 2' : 'image 1'}/><p>{AxeT}</p></div>
-            <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={bristleback} alt={showImage ? 'image 2' : 'image 1'}/><p>{BristlebackT}</p></div>
-            <div className='frame'><img className={filterCarry || filterSupport ? 'filterHighlight ' : ''}  src={showImage ? terry: centaur} alt={showImage ? 'image 2' : 'image 1'}/><p>{CentaurT}</p></div>
-            <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={showImage ? butters: chaosknight} alt={showImage ? 'image 2' : 'image 1'}/><p>{ChaosKnightT}</p></div>
-            <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={dawnbreaker} alt={showImage ? 'image 2' : 'image 1'}/><p>{DawnbreakerT}</p></div>
-            <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={doom} alt={showImage ? 'image 2' : 'image 1'}/><p>{DoomT}</p></div>
-            <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={showImage ? davion: dragonKnight} alt={showImage ? 'image 2' : 'image 1'}/><p>{DragonKnightT}</p></div>
-            <div className='frame'><img className={filterCarry || filterSupport ? 'filterHighlight ' : ''}  src={showImage ? ironGiant: earthSpirit} alt={showImage ? 'image 2' : 'image 1'}/><p>{EarthSpiritT}</p></div>
-            <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={showImage ? chewy: earthShaker} alt={showImage ? 'image 2' : 'image 1'}/><p>{EarthShakerT}</p></div>
-            <div className='frame'><img className={filterCarry || filterSupport ? 'filterHighlight ' : ''}  src={elderTitan} alt={showImage ? 'image 2' : 'image 1'}/><p>{ElderTitanT}</p></div>
-            <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={huskar} alt={showImage ? 'image 2' : 'image 1'}/><p>{HuskarT}</p></div>
-            <div className='frame'><img src={kunkka} alt={showImage ? 'image 2' : 'image 1'}/><p>{KunkkaT}</p></div>
-            <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={showImage ? pharah: legion} alt={showImage ? 'image 2' : 'image 1'}/><p>{LegionT}</p></div>
-            <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={lifestealer} alt={showImage ? 'image 2' : 'image 1'}/><p>{LifestealerT}</p></div>
-            <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={mars} alt={showImage ? 'image 2' : 'image 1'}/><p>{MarsT}</p></div>
-            <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={nightStalker} alt={showImage ? 'image 2' : 'image 1'}/><p>{NightStalkerT}</p></div>
-            <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={showImage ? majinBuu: ogreMagi} alt={showImage ? 'image 2' : 'image 1'}/><p>{OgreMagiT}</p></div>
-            <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={showImage ? obiwan: omniknight} alt={showImage ? 'image 2' : 'image 1'}/><p>{OmniknightT}</p></div>
-            <div className='frame'><img className={filterCarry || filterSupport ? 'filterHighlight ' : ''}  src={primal} alt={showImage ? 'image 2' : 'image 1'}/><p>{PrimalBeastT}</p></div>
-            <div className='frame'><img className={filterCarry || filterSupport ? 'filterHighlight ' : ''}  src={showImage ? roadhog: pudge} alt={showImage ? 'image 2' : 'image 1'}/><p>{PudgeT}</p></div>
-            <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={slardar} alt={showImage ? 'image 2' : 'image 1'}/><p>{SlardarT}</p></div>
-            <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={spiritBreaker} alt={showImage ? 'image 2' : 'image 1'}/><p>{SpiritBreakerT}</p></div>
-            <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={showImage ? generalGrievous: sven} alt={showImage ? 'image 2' : 'image 1'}/><p>{SvenT}</p></div>
-            <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={tidehunter} alt={showImage ? 'image 2' : 'image 1'}/><p>{TidehunterT}</p></div>
-            <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={showImage ? rock: tiny} alt={showImage ? 'image 2' : 'image 1'}/><p>{TinyT}</p></div>
-            <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={showImage ? groot: treant} alt={showImage ? 'image 2' : 'image 1'}/><p>{TreantProtectorT}</p></div>
-            <div className='frame'><img className={filterCarry || filterSupport ? 'filterHighlight ' : ''}  src={tusk} alt={showImage ? 'image 2' : 'image 1'}/><p>{TuskT}</p></div>
-            <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={underlord} alt={showImage ? 'image 2' : 'image 1'}/><p>{UnderlordT}</p></div>
-            <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={undying} alt={showImage ? 'image 2' : 'image 1'}/><p>{UndyingT}</p></div>
-            <div className='frame'><img src={wraithKing} alt={showImage ? 'image 2' : 'image 1'}/><p>{WraithKingT}</p></div>
+            <div className={filterHealer ? 'filterHighlight frame' : 'frame'}><img src={showImage ? shrek: alchemist} alt={showImage ? 'image 2' : 'image 1'}/><p>{AlchemistT}</p></div>
+            <div className={filterSupport || filterHealer || filterHealer ? 'filterHighlight frame' : 'frame'}><img   src={showImage ? ceb: axe} alt={showImage ? 'image 2' : 'image 1'}/><p>{AxeT}</p></div>
+            <div className={filterSupport || filterHealer ? 'filterHighlight frame' : 'frame'} ><img  src={bristleback} alt={showImage ? 'image 2' : 'image 1'}/><p>{BristlebackT}</p></div>
+            <div className={filterCarry || filterSupport || filterHealer ? 'filterHighlight frame' : 'frame'}><img   src={showImage ? terry: centaur} alt={showImage ? 'image 2' : 'image 1'}/><p>{CentaurT}</p></div>
+            <div className={filterSupport || filterHealer ? 'filterHighlight frame' : 'frame'}><img   src={showImage ? butters: chaosknight} alt={showImage ? 'image 2' : 'image 1'}/><p>{ChaosKnightT}</p></div>
+            <div className={filterSupport ? 'filterHighlight frame' : 'frame'}><img   src={dawnbreaker} alt={showImage ? 'image 2' : 'image 1'}/><p>{DawnbreakerT}</p></div>
+            <div className={filterSupport || filterHealer ? 'filterHighlight frame' : 'frame'}><img src={doom} alt={showImage ? 'image 2' : 'image 1'}/><p>{DoomT}</p></div>
+            <div className={filterSupport || filterHealer ? 'filterHighlight frame' : 'frame'}><img src={showImage ? davion: dragonKnight} alt={showImage ? 'image 2' : 'image 1'}/><p>{DragonKnightT}</p></div>
+            <div className={filterCarry || filterSupport || filterHealer ? 'filterHighlight frame' : 'frame'}><img src={showImage ? ironGiant: earthSpirit} alt={showImage ? 'image 2' : 'image 1'}/><p>{EarthSpiritT}</p></div>
+            <div className={filterCarry || filterHealer ? 'filterHighlight frame' : 'frame'}><img src={showImage ? chewy: earthShaker} alt={showImage ? 'image 2' : 'image 1'}/><p>{EarthShakerT}</p></div>
+            <div className={filterCarry || filterSupport || filterHealer ? 'filterHighlight frame' : 'frame'}><img src={elderTitan} alt={showImage ? 'image 2' : 'image 1'}/><p>{ElderTitanT}</p></div>
+            <div className={filterSupport || filterHealer ? 'filterHighlight frame' : 'frame'}><img  src={huskar} alt={showImage ? 'image 2' : 'image 1'}/><p>{HuskarT}</p></div>
+            <div className={filterHealer ? 'filterHighlight frame' : 'frame'}><img  src={kunkka} alt={showImage ? 'image 2' : 'image 1'}/><p>{KunkkaT}</p></div>
+            <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img   src={showImage ? pharah: legion} alt={showImage ? 'image 2' : 'image 1'}/><p>{LegionT}</p></div>
+            <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img   src={lifestealer} alt={showImage ? 'image 2' : 'image 1'}/><p>{LifestealerT}</p></div>
+            <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img   src={mars} alt={showImage ? 'image 2' : 'image 1'}/><p>{MarsT}</p></div>
+            <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img   src={nightStalker} alt={showImage ? 'image 2' : 'image 1'}/><p>{NightStalkerT}</p></div>
+            <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'}><img   src={showImage ? majinBuu: ogreMagi} alt={showImage ? 'image 2' : 'image 1'}/><p>{OgreMagiT}</p></div>
+            <div className={filterCarry ? 'filterHighlight frame ' : 'frame'}><img   src={showImage ? obiwan: omniknight} alt={showImage ? 'image 2' : 'image 1'}/><p>{OmniknightT}</p></div>
+            <div className={filterCarry || filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img   src={primal} alt={showImage ? 'image 2' : 'image 1'}/><p>{PrimalBeastT}</p></div>
+            <div className={filterCarry || filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'} ><img  src={showImage ? roadhog: pudge} alt={showImage ? 'image 2' : 'image 1'}/><p>{PudgeT}</p></div>
+            <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img   src={slardar} alt={showImage ? 'image 2' : 'image 1'}/><p>{SlardarT}</p></div>
+            <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img   src={spiritBreaker} alt={showImage ? 'image 2' : 'image 1'}/><p>{SpiritBreakerT}</p></div>
+            <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img   src={showImage ? generalGrievous: sven} alt={showImage ? 'image 2' : 'image 1'}/><p>{SvenT}</p></div>
+            <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img   src={tidehunter} alt={showImage ? 'image 2' : 'image 1'}/><p>{TidehunterT}</p></div>
+            <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img   src={showImage ? rock: tiny} alt={showImage ? 'image 2' : 'image 1'}/><p>{TinyT}</p></div>
+            <div className={filterCarry ? 'filterHighlight frame ' : 'frame'}><img   src={showImage ? groot: treant} alt={showImage ? 'image 2' : 'image 1'}/><p>{TreantProtectorT}</p></div>
+            <div className={filterCarry || filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img src={tusk} alt={showImage ? 'image 2' : 'image 1'}/><p>{TuskT}</p></div>
+            <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'}><img   src={underlord} alt={showImage ? 'image 2' : 'image 1'}/><p>{UnderlordT}</p></div>
+            <div className={filterCarry ? 'filterHighlight frame ' : 'frame'}><img   src={undying} alt={showImage ? 'image 2' : 'image 1'}/><p>{UndyingT}</p></div>
+            <div className={filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={wraithKing} alt={showImage ? 'image 2' : 'image 1'}/><p>{WraithKingT}</p></div>
         </div>
         <div class="agilities">
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={antiMage} alt={showImage ? 'image 2' : 'image 1'}/><p>{AntiMageT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={arcWarden} alt={showImage ? 'image 2' : 'image 1'}/><p>{ArcWardenT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={bloodseeker} alt={showImage ? 'image 2' : 'image 1'}/><p>{BloodseekerT}</p></div>
-          <div className='frame'><img className={filterSupport || filterCarry ? 'filterHighlight ' : ''}  src={showImage ? meowth : bounty} alt={showImage ? 'image 2' : 'image 1'}/><p>{BountyHunterT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={clinkz} alt={showImage ? 'image 2' : 'image 1'}/><p>{ClinkzT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={drowRanger} alt={showImage ? 'image 2' : 'image 1'}/><p>{DrowRangerT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={emberSpirit} alt={showImage ? 'image 2' : 'image 1'}/><p>{EmberSpiritT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={facelessVoid} alt={showImage ? 'image 2' : 'image 1'}/><p>{FacelessVoidT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={gyrocopter} alt={showImage ? 'image 2' : 'image 1'}/><p>{GyrocopterT}</p></div>
-          <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={showImage ? hopps : hoodwink} alt={showImage ? 'image 2' : 'image 1'}/><p>{HoodwinkT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={juggernaut} alt={showImage ? 'image 2' : 'image 1'}/><p>{JuggernautT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={luna} alt={showImage ? 'image 2' : 'image 1'}/><p>{LunaT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={medusa} alt={showImage ? 'image 2' : 'image 1'}/><p>{MedusaT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={showImage ? steveBuscemi : meepo} alt={showImage ? 'image 2' : 'image 1'}/><p>{MeepoT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={monkeyKing} alt={showImage ? 'image 2' : 'image 1'}/><p>{MonkeyKingT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={morphling} alt={showImage ? 'image 2' : 'image 1'}/><p>{MorphlingT}</p></div>
-          <div className='frame'><img src={showImage ? ashoka : nagaSiren} alt={showImage ? 'image 2' : 'image 1'}/><p>{NagaSirenT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={PA} alt={showImage ? 'image 2' : 'image 1'}/><p>{PhantomAssassinT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={showImage ? tony : PL} alt={showImage ? 'image 2' : 'image 1'}/><p>{PhantomLancerT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={razor} alt={showImage ? 'image 2' : 'image 1'}/><p>{RazorT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={riki} alt={showImage ? 'image 2' : 'image 1'}/><p>{RikiT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={shadowFiend} alt={showImage ? 'image 2' : 'image 1'}/><p>{ShadowFiendT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={slark} alt={showImage ? 'image 2' : 'image 1'}/><p>{SlarkT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={showImage ? torbjorn : sniper} alt={showImage ? 'image 2' : 'image 1'}/><p>{SniperT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={spectre} alt={showImage ? 'image 2' : 'image 1'}/><p>{SpectreT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={TA} alt={showImage ? 'image 2' : 'image 1'}/><p>{TemplarT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={terrorblade} alt={showImage ? 'image 2' : 'image 1'}/><p>{TerrorbladeT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={trollWarlord} alt={showImage ? 'image 2' : 'image 1'}/><p>{TrollWarlordT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={ursa} alt={showImage ? 'image 2' : 'image 1'}/><p>{UrsaT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={viper} alt={showImage ? 'image 2' : 'image 1'}/><p>{ViperT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={weaver} alt={showImage ? 'image 2' : 'image 1'}/><p>{WeaverT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'} ><img src={antiMage} alt={showImage ? 'image 2' : 'image 1'}/><p>{AntiMageT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'} ><img src={arcWarden} alt={showImage ? 'image 2' : 'image 1'}/><p>{ArcWardenT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'} ><img src={bloodseeker} alt={showImage ? 'image 2' : 'image 1'}/><p>{BloodseekerT}</p></div>
+          <div className={filterSupport || filterHealer  || filterCarry ? 'filterHighlight frame ' : 'frame'} ><img src={showImage ? meowth : bounty} alt={showImage ? 'image 2' : 'image 1'}/><p>{BountyHunterT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'} ><img src={clinkz} alt={showImage ? 'image 2' : 'image 1'}/><p>{ClinkzT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'} ><img src={drowRanger} alt={showImage ? 'image 2' : 'image 1'}/><p>{DrowRangerT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'} ><img src={emberSpirit} alt={showImage ? 'image 2' : 'image 1'}/><p>{EmberSpiritT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'} ><img src={facelessVoid} alt={showImage ? 'image 2' : 'image 1'}/><p>{FacelessVoidT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'} ><img src={gyrocopter} alt={showImage ? 'image 2' : 'image 1'}/><p>{GyrocopterT}</p></div>
+          <div className={filterCarry || filterHealer  ? 'filterHighlight frame ' : 'frame'} ><img src={showImage ? hopps : hoodwink} alt={showImage ? 'image 2' : 'image 1'}/><p>{HoodwinkT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'} ><img src={juggernaut} alt={showImage ? 'image 2' : 'image 1'}/><p>{JuggernautT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'} ><img src={luna} alt={showImage ? 'image 2' : 'image 1'}/><p>{LunaT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'} ><img src={medusa} alt={showImage ? 'image 2' : 'image 1'}/><p>{MedusaT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'} ><img src={showImage ? steveBuscemi : meepo} alt={showImage ? 'image 2' : 'image 1'}/><p>{MeepoT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame' : 'frame'} ><img src={monkeyKing} alt={showImage ? 'image 2' : 'image 1'}/><p>{MonkeyKingT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight ' : 'frame'} ><img src={morphling} alt={showImage ? 'image 2' : 'image 1'}/><p>{MorphlingT}</p></div>
+          <div className={filterHealer ? 'filterHighlight frame ' : 'frame'}><img src={showImage ? ashoka : nagaSiren} alt={showImage ? 'image 2' : 'image 1'}/><p>{NagaSirenT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'}><img src={PA} alt={showImage ? 'image 2' : 'image 1'}/><p>{PhantomAssassinT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'}><img  src={showImage ? tony : PL} alt={showImage ? 'image 2' : 'image 1'}/><p>{PhantomLancerT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'}><img  src={razor} alt={showImage ? 'image 2' : 'image 1'}/><p>{RazorT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'}><img  src={riki} alt={showImage ? 'image 2' : 'image 1'}/><p>{RikiT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'}><img  src={shadowFiend} alt={showImage ? 'image 2' : 'image 1'}/><p>{ShadowFiendT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'}><img  src={slark} alt={showImage ? 'image 2' : 'image 1'}/><p>{SlarkT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'}><img  src={showImage ? torbjorn : sniper} alt={showImage ? 'image 2' : 'image 1'}/><p>{SniperT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'}><img  src={spectre} alt={showImage ? 'image 2' : 'image 1'}/><p>{SpectreT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'}><img  src={TA} alt={showImage ? 'image 2' : 'image 1'}/><p>{TemplarT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'}><img  src={terrorblade} alt={showImage ? 'image 2' : 'image 1'}/><p>{TerrorbladeT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'}><img  src={trollWarlord} alt={showImage ? 'image 2' : 'image 1'}/><p>{TrollWarlordT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'}><img  src={ursa} alt={showImage ? 'image 2' : 'image 1'}/><p>{UrsaT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'}><img  src={viper} alt={showImage ? 'image 2' : 'image 1'}/><p>{ViperT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'}><img  src={weaver} alt={showImage ? 'image 2' : 'image 1'}/><p>{WeaverT}</p></div>
         </div>
 
 
         <div class="intelligence">
-          <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={AA} alt={showImage ? 'image 2' : 'image 1'}/><p>{AncientApparitionT}</p></div>
-          <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={showImage ? elsa : CM} alt={showImage ? 'image 2' : 'image 1'}/><p>{Crystal_maidenT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={deathProphet} alt={showImage ? 'image 2' : 'image 1'}/><p>{DeathProphetT}</p></div>
-          <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={disruptor} alt={showImage ? 'image 2' : 'image 1'}/><p>{DisruptorT}</p></div>
-          <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={showImage ? bambi : enchantress} alt={showImage ? 'image 2' : 'image 1'}/><p>{EnchantressT}</p></div>
-          <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={grimstroke} alt={showImage ? 'image 2' : 'image 1'}/><p>{GrimstrokeT}</p></div>
-          <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={jakiro} alt={showImage ? 'image 2' : 'image 1'}/><p>{JakiroT}</p></div>
-          <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={showImage ? merlin : KOTL} alt={showImage ? 'image 2' : 'image 1'}/><p>{KotlT}</p></div>
-          <div className='frame'><img src={leshrac} alt={showImage ? 'image 2' : 'image 1'}/><p>{LeshracT}</p></div>
-          <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={lich} alt={showImage ? 'image 2' : 'image 1'}/><p>{LichT}</p></div>
-          <div className='frame'><img src={lina} alt={showImage ? 'image 2' : 'image 1'}/><p>{LinaT}</p></div>
-          <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={lion} alt={showImage ? 'image 2' : 'image 1'}/><p>{LionT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={muerta} alt={showImage ? 'image 2' : 'image 1'}/><p>{MuertaT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={natures} alt={showImage ? 'image 2' : 'image 1'}/><p>{NaturesT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={necrophos} alt={showImage ? 'image 2' : 'image 1'}/><p>{NecrophosT}</p></div>
-          <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={oracle} alt={showImage ? 'image 2' : 'image 1'}/><p>{OracleT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={OD} alt={showImage ? 'image 2' : 'image 1'}/><p>{OutworldDestroyerT}</p></div>
-          <div className='frame'><img className={filterCarry || filterSupport ? 'filterHighlight ' : ''}  src={puck} alt={showImage ? 'image 2' : 'image 1'}/><p>{PuckT}</p></div>
-          <div className='frame'><img className={filterCarry || filterSupport ? 'filterHighlight ' : ''}  src={pugna} alt={showImage ? 'image 2' : 'image 1'}/><p>{PugnaT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={QoP} alt={showImage ? 'image 2' : 'image 1'}/><p>{QueenOfPainT}</p></div>
-          <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={rubick} alt={showImage ? 'image 2' : 'image 1'}/><p>{RubickT}</p></div>
-          <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={shadowDemon} alt={showImage ? 'image 2' : 'image 1'}/><p>{ShadowDemonT}</p></div>
-          <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={showImage ? scorpion : shadowShaman} alt={showImage ? 'image 2' : 'image 1'}/><p>{ShadowShamanT}</p></div>
-          <div className='frame'><img src={silencer} alt={showImage ? 'image 2' : 'image 1'}/><p>{SilencerT}</p></div>
-          <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={showImage ? shaiapouf : skywrath} alt={showImage ? 'image 2' : 'image 1'}/><p>{SkywrathMageT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={showImage ? genie : stormSpirit} alt={showImage ? 'image 2' : 'image 1'}/><p>{StormSpiritT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={tinker} alt={showImage ? 'image 2' : 'image 1'}/><p>{TinkerT}</p></div>
-          <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={warlock} alt={showImage ? 'image 2' : 'image 1'}/><p>{WarlockT}</p></div>
-          <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={witchDoctor} alt={showImage ? 'image 2' : 'image 1'}/><p>{WitchDoctorT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={zeus} alt={showImage ? 'image 2' : 'image 1'}/><p>{ZeusT}</p></div>
+          <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'}><img src={AA} alt={showImage ? 'image 2' : 'image 1'}/><p>{AncientApparitionT}</p></div>
+          <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={showImage ? elsa : CM} alt={showImage ? 'image 2' : 'image 1'}/><p>{Crystal_maidenT}</p></div>
+          <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img src={deathProphet} alt={showImage ? 'image 2' : 'image 1'}/><p>{DeathProphetT}</p></div>
+          <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={disruptor} alt={showImage ? 'image 2' : 'image 1'}/><p>{DisruptorT}</p></div>
+          <div className={filterCarry ? 'filterHighlight frame ' : 'frame'}><img  src={showImage ? bambi : enchantress} alt={showImage ? 'image 2' : 'image 1'}/><p>{EnchantressT}</p></div>
+          <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={grimstroke} alt={showImage ? 'image 2' : 'image 1'}/><p>{GrimstrokeT}</p></div>
+          <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={jakiro} alt={showImage ? 'image 2' : 'image 1'}/><p>{JakiroT}</p></div>
+          <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={showImage ? merlin : KOTL} alt={showImage ? 'image 2' : 'image 1'}/><p>{KotlT}</p></div>
+          <div className={filterHealer ? 'filterHighlight frame ' : 'frame'}><img src={leshrac} alt={showImage ? 'image 2' : 'image 1'}/><p>{LeshracT}</p></div>
+          <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={lich} alt={showImage ? 'image 2' : 'image 1'}/><p>{LichT}</p></div>
+          <div className={filterHealer ? 'filterHighlight frame ' : 'frame'}><img src={lina} alt={showImage ? 'image 2' : 'image 1'}/><p>{LinaT}</p></div>
+          <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'} ><img src={lion} alt={showImage ? 'image 2' : 'image 1'}/><p>{LionT}</p></div>
+          <div className={filterSupport || filterHealer || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={muerta} alt={showImage ? 'image 2' : 'image 1'}/><p>{MuertaT}</p></div>
+          <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={natures} alt={showImage ? 'image 2' : 'image 1'}/><p>{NaturesT}</p></div>
+          <div className={filterSupport ? 'filterHighlight frame ' : 'frame'} ><img src={necrophos} alt={showImage ? 'image 2' : 'image 1'}/><p>{NecrophosT}</p></div>
+          <div className={filterCarry ? 'filterHighlight frame ' : 'frame'}><img  src={oracle} alt={showImage ? 'image 2' : 'image 1'}/><p>{OracleT}</p></div>
+          <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={OD} alt={showImage ? 'image 2' : 'image 1'}/><p>{OutworldDestroyerT}</p></div>
+          <div className={filterCarry || filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={puck} alt={showImage ? 'image 2' : 'image 1'}/><p>{PuckT}</p></div>
+          <div className={filterCarry || filterSupport ? 'filterHighlight frame ' : 'frame'}><img  src={pugna} alt={showImage ? 'image 2' : 'image 1'}/><p>{PugnaT}</p></div>
+          <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={QoP} alt={showImage ? 'image 2' : 'image 1'}/><p>{QueenOfPainT}</p></div>
+          <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={rubick} alt={showImage ? 'image 2' : 'image 1'}/><p>{RubickT}</p></div>
+          <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={shadowDemon} alt={showImage ? 'image 2' : 'image 1'}/><p>{ShadowDemonT}</p></div>
+          <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={showImage ? scorpion : shadowShaman} alt={showImage ? 'image 2' : 'image 1'}/><p>{ShadowShamanT}</p></div>
+          <div className={filterHealer ? 'filterHighlight frame ' : 'frame'}><img src={silencer} alt={showImage ? 'image 2' : 'image 1'}/><p>{SilencerT}</p></div>
+          <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={showImage ? shaiapouf : skywrath} alt={showImage ? 'image 2' : 'image 1'}/><p>{SkywrathMageT}</p></div>
+          <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={showImage ? genie : stormSpirit} alt={showImage ? 'image 2' : 'image 1'}/><p>{StormSpiritT}</p></div>
+          <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img src={tinker} alt={showImage ? 'image 2' : 'image 1'}/><p>{TinkerT}</p></div>
+          <div className={filterCarry ? 'filterHighlight frame ' : 'frame'}><img  src={warlock} alt={showImage ? 'image 2' : 'image 1'}/><p>{WarlockT}</p></div>
+          <div className={filterCarry ? 'filterHighlight frame ' : 'frame'} ><img src={witchDoctor} alt={showImage ? 'image 2' : 'image 1'}/><p>{WitchDoctorT}</p></div>
+          <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'} ><img src={zeus} alt={showImage ? 'image 2' : 'image 1'}/><p>{ZeusT}</p></div>
         </div>
         <div class='universal'>
         <div className='frame'><img src={abaddon} alt={showImage ? 'image 2' : 'image 1'}/><p>{AbaddonT}</p></div>
-        <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={bane} alt={showImage ? 'image 2' : 'image 1'}/><p>{BaneT}</p></div>
-        <div className='frame'><img className={filterCarry || filterSupport ? 'filterHighlight ' : ''}  src={batrider} alt={showImage ? 'image 2' : 'image 1'}/><p>{BatriderT}</p></div>
-        <div className='frame'><img className={filterCarry || filterSupport ? 'filterHighlight ' : ''}  src={beastmaster} alt={showImage ? 'image 2' : 'image 1'}/><p>{BeastmasterT}</p></div>
-        <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={showImage ? panda : brewmaster} alt={showImage ? 'image 2' : 'image 1'}/><p>{BrewmasterT}</p></div>
-        <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={broodmother} alt={showImage ? 'image 2' : 'image 1'}/><p>{BroodmotherT}</p></div>
-        <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={showImage ? liShang : chen} alt={showImage ? 'image 2' : 'image 1'}/><p>{ChenT}</p></div>
-        <div className='frame'><img className={filterCarry || filterSupport ? 'filterHighlight ' : ''}  src={clockwerk} alt={showImage ? 'image 2' : 'image 1'}/><p>{ClockwerkT}</p></div>
-        <div className='frame'><img className={filterCarry || filterSupport ? 'filterHighlight ' : ''}  src={darkSeer} alt={showImage ? 'image 2' : 'image 1'}/><p>{DarkSeerT}</p></div>
-        <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={darkWillow} alt={showImage ? 'image 2' : 'image 1'}/><p>{DarkWillowT}</p></div>
-        <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={dazzle} alt={showImage ? 'image 2' : 'image 1'}/><p>{DazzleT}</p></div>
-        <div className='frame'><img className={filterCarry || filterSupport ? 'filterHighlight ' : ''}  src={engima} alt={showImage ? 'image 2' : 'image 1'}/><p>{EnigmaT}</p></div>
-        <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={showImage ? lucius : invoker} alt={showImage ? 'image 2' : 'image 1'}/><p>{InvokerT}</p></div>
-        <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={io} alt={showImage ? 'image 2' : 'image 1'}/><p>{IoT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={showImage ? liamNeeson : loneDruid} alt={showImage ? 'image 2' : 'image 1'}/><p>{LoneDruidT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''} src={lycan} alt={showImage ? 'image 2' : 'image 1'}/><p>{LycanT}</p></div>
-          <div className='frame'><img className={filterCarry || filterSupport ? 'filterHighlight ' : ''} src={showImage ? manny : magnus} alt={showImage ? 'image 2' : 'image 1'}/><p>{MagnusT}</p></div>
-          <div className='frame'><img src={marci} alt={showImage ? 'image 2' : 'image 1'}/><p>{MarciT}</p></div>
-          <div className='frame'><img src={mirana} alt={showImage ? 'image 2' : 'image 1'}/><p>{MiranaT}</p></div>
-          <div className='frame'><img className={filterSupport || filterCarry ? 'filterHighlight ' : ''}  src={nyx} alt={showImage ? 'image 2' : 'image 1'}/><p>{NyxAssassinT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''}  src={showImage ? pussNboots : pangolier} alt={showImage ? 'image 2' : 'image 1'}/><p>{PangolierT}</p></div>
-          <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''} src={pheonix} alt={showImage ? 'image 2' : 'image 1'}/><p>{PhoenixT}</p></div>
-          <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''} src={sandKing} alt={showImage ? 'image 2' : 'image 1'}/><p>{SandKingT}</p></div>
-          <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''} src={snapfire} alt={showImage ? 'image 2' : 'image 1'}/><p>{SnapfireT}</p></div>
-          <div className='frame'><img className={filterCarry || filterSupport ? 'filterHighlight ' : ''} src={techies} alt={showImage ? 'image 2' : 'image 1'}/><p>{TechiesT}</p></div>
-          <div className='frame'><img className={filterCarry || filterSupport ? 'filterHighlight ' : ''} src={timbersaw} alt={showImage ? 'image 2' : 'image 1'}/><p>{TimbersawT}</p></div>
-          <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={vengeful} alt={showImage ? 'image 2' : 'image 1'}/><p>{VengefulSpiritT}</p></div>
-          <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''}  src={venomancer} alt={showImage ? 'image 2' : 'image 1'}/><p>{VenomancerT}</p></div>
-          <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''} src={visage} alt={showImage ? 'image 2' : 'image 1'}/><p>{VisageT}</p></div>
-          <div className='frame'><img className={filterSupport ? 'filterHighlight ' : ''} src={voidSpirit} alt={showImage ? 'image 2' : 'image 1'}/><p>{VoidSpiritT}</p></div>
-          <div className='frame'><img src={windranger} alt={showImage ? 'image 2' : 'image 1'}/><p>{WindrangerT}</p></div>
-          <div className='frame'><img className={filterCarry ? 'filterHighlight ' : ''} src={winterWyvern} alt={showImage ? 'image 2' : 'image 1'}/><p>{WinterWyvernT}</p></div>
+        <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'}><img   src={bane} alt={showImage ? 'image 2' : 'image 1'}/><p>{BaneT}</p></div>
+        <div className={filterCarry || filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img   src={batrider} alt={showImage ? 'image 2' : 'image 1'}/><p>{BatriderT}</p></div>
+        <div className={filterCarry || filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img   src={beastmaster} alt={showImage ? 'image 2' : 'image 1'}/><p>{BeastmasterT}</p></div>
+        <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img   src={showImage ? panda : brewmaster} alt={showImage ? 'image 2' : 'image 1'}/><p>{BrewmasterT}</p></div>
+        <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img   src={broodmother} alt={showImage ? 'image 2' : 'image 1'}/><p>{BroodmotherT}</p></div>
+        <div className={filterCarry ? 'filterHighlight frame ' : 'frame'}><img   src={showImage ? liShang : chen} alt={showImage ? 'image 2' : 'image 1'}/><p>{ChenT}</p></div>
+        <div className={filterCarry || filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img   src={clockwerk} alt={showImage ? 'image 2' : 'image 1'}/><p>{ClockwerkT}</p></div>
+        <div className={filterCarry || filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img   src={darkSeer} alt={showImage ? 'image 2' : 'image 1'}/><p>{DarkSeerT}</p></div>
+        <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'} ><img  src={darkWillow} alt={showImage ? 'image 2' : 'image 1'}/><p>{DarkWillowT}</p></div>
+        <div className={filterCarry ? 'filterHighlight frame ' : 'frame'}><img   src={dazzle} alt={showImage ? 'image 2' : 'image 1'}/><p>{DazzleT}</p></div>
+        <div className={filterCarry || filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'} ><img  src={engima} alt={showImage ? 'image 2' : 'image 1'}/><p>{EnigmaT}</p></div>
+        <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'} ><img  src={showImage ? lucius : invoker} alt={showImage ? 'image 2' : 'image 1'}/><p>{InvokerT}</p></div>
+        <div className={filterCarry ? 'filterHighlight frame ' : 'frame'}><img   src={io} alt={showImage ? 'image 2' : 'image 1'}/><p>{IoT}</p></div>
+          <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img   src={showImage ? liamNeeson : loneDruid} alt={showImage ? 'image 2' : 'image 1'}/><p>{LoneDruidT}</p></div>
+          <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={lycan} alt={showImage ? 'image 2' : 'image 1'}/><p>{LycanT}</p></div>
+          <div className={filterCarry || filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={showImage ? manny : magnus} alt={showImage ? 'image 2' : 'image 1'}/><p>{MagnusT}</p></div>
+          <div className={filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={marci} alt={showImage ? 'image 2' : 'image 1'}/><p>{MarciT}</p></div>
+          <div className={filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={mirana} alt={showImage ? 'image 2' : 'image 1'}/><p>{MiranaT}</p></div>
+          <div className={filterSupport || filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'}><img src={nyx} alt={showImage ? 'image 2' : 'image 1'}/><p>{NyxAssassinT}</p></div>
+          <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img src={showImage ? pussNboots : pangolier} alt={showImage ? 'image 2' : 'image 1'}/><p>{PangolierT}</p></div>
+          <div className={filterCarry ? 'filterHighlight frame ' : 'frame'}><img  src={pheonix} alt={showImage ? 'image 2' : 'image 1'}/><p>{PhoenixT}</p></div>
+          <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={sandKing} alt={showImage ? 'image 2' : 'image 1'}/><p>{SandKingT}</p></div>
+          <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={snapfire} alt={showImage ? 'image 2' : 'image 1'}/><p>{SnapfireT}</p></div>
+          <div className={filterCarry || filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={techies} alt={showImage ? 'image 2' : 'image 1'}/><p>{TechiesT}</p></div>
+          <div className={filterCarry || filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'} ><img src={venomancer} alt={showImage ? 'image 2' : 'image 1'}/><p>{VenomancerT}</p></div>
+          <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={visage} alt={showImage ? 'image 2' : 'image 1'}/><p>{VisageT}</p></div>
+          <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img src={voidSpirit} alt={showImage ? 'image 2' : 'image 1'}/><p>{VoidSpiritT}</p></div>
+          <div className={filterHealer ? 'filterHighlight frame ' : 'frame'}><img src={windranger} alt={showImage ? 'image 2' : 'image 1'}/><p>{WindrangerT}</p></div>
+          <div className={filterCarry ? 'filterHighlight frame ' : 'frame'}><img src={winterWyvern} alt={showImage ? 'image 2' : 'image 1'}/><p>{WinterWyvernT}</p></div>
           </div>
         </section>
         
@@ -459,6 +467,12 @@ useEffect(() => {
       support={()=>{
         toggleSupport();
       }}
+      healer={()=>{
+        toggleHealer();
+      }}
+      selectedCarry={selectedCarry}
+      selectedSupport={selectedSupport}
+      selectedHealer={selectedHealer}
       />
       {/* END */}
     </>
