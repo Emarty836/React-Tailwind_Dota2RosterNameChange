@@ -450,6 +450,8 @@ useEffect(() => {
           <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={sandKing} alt={showImage ? 'image 2' : 'image 1'}/><p>{SandKingT}</p></div>
           <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={snapfire} alt={showImage ? 'image 2' : 'image 1'}/><p>{SnapfireT}</p></div>
           <div className={filterCarry || filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={techies} alt={showImage ? 'image 2' : 'image 1'}/><p>{TechiesT}</p></div>
+          <div className={filterCarry || filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={timbersaw} alt={showImage ? 'image 2' : 'image 1'}/><p>{TimbersawT}</p></div>
+          <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={vengeful} alt={showImage ? 'image 2' : 'image 1'}/><p>{VengefulSpiritT}</p></div>
           <div className={filterCarry || filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'} ><img src={venomancer} alt={showImage ? 'image 2' : 'image 1'}/><p>{VenomancerT}</p></div>
           <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={visage} alt={showImage ? 'image 2' : 'image 1'}/><p>{VisageT}</p></div>
           <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img src={voidSpirit} alt={showImage ? 'image 2' : 'image 1'}/><p>{VoidSpiritT}</p></div>
