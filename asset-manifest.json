@@ -1,8 +1,9 @@
 {
   "files": {
     "main.css": "/React-Tailwind_Dota2RosterNameChange/static/css/main.a9af8fd2.css",
-    "main.js": "/React-Tailwind_Dota2RosterNameChange/static/js/main.4bd766bc.js",
+    "main.js": "/React-Tailwind_Dota2RosterNameChange/static/js/main.95424029.js",
     "static/media/General_Grievous.png": "/React-Tailwind_Dota2RosterNameChange/static/media/General_Grievous.024ddd8e4e4bb084c79d.png",
+    "static/media/willywonka.jpg": "/React-Tailwind_Dota2RosterNameChange/static/media/willywonka.877bd5aa282c58b2d0e1.jpg",
     "static/media/benedict-barone-katoglou-phoenix-low.jpeg": "/React-Tailwind_Dota2RosterNameChange/static/media/benedict-barone-katoglou-phoenix-low.ae20bbe85e5bb5e69286.jpeg",
     "static/media/ashoka_tanp.jpeg": "/React-Tailwind_Dota2RosterNameChange/static/media/ashoka_tanp.d23e7250af4819ddac64.jpeg",
     "static/media/Torbjorn.png": "/React-Tailwind_Dota2RosterNameChange/static/media/Torbjorn.3daec4a932d42a00f59e.png",
@@ -13,6 +14,7 @@
     "static/media/roadhog.jpeg": "/React-Tailwind_Dota2RosterNameChange/static/media/roadhog.8fb05216618bf2450a61.jpeg",
     "static/media/groot.png": "/React-Tailwind_Dota2RosterNameChange/static/media/groot.6c981d8707512aa43fb5.png",
     "static/media/lucius.jpeg": "/React-Tailwind_Dota2RosterNameChange/static/media/lucius.79991799e399174855d1.jpeg",
+    "static/media/falco.png": "/React-Tailwind_Dota2RosterNameChange/static/media/falco.c562cf0e8c6311f3be8c.png",
     "static/media/Shaiapouf.png": "/React-Tailwind_Dota2RosterNameChange/static/media/Shaiapouf.bde97873d98c94eaeba2.png",
     "static/media/elsa.jpeg": "/React-Tailwind_Dota2RosterNameChange/static/media/elsa.bba9b14db090e13065a3.jpeg",
     "static/media/chewy.jpeg": "/React-Tailwind_Dota2RosterNameChange/static/media/chewy.df24a3b9dcecbb7b2adb.jpeg",
@@ -57,6 +59,7 @@
     "static/media/Lycan_icon.png": "/React-Tailwind_Dota2RosterNameChange/static/media/Lycan_icon.05c64be7e7d792757115.png",
     "static/media/earthspirit.png": "/React-Tailwind_Dota2RosterNameChange/static/media/earthspirit.1222d0fd969861291485.png",
     "static/media/Sand_King_icon.png": "/React-Tailwind_Dota2RosterNameChange/static/media/Sand_King_icon.cc257f6209fa9e5cd60d.png",
+    "static/media/kez_icon.png": "/React-Tailwind_Dota2RosterNameChange/static/media/kez_icon.3d535bba49d8aa66df5b.png",
     "static/media/alchemist.jpeg": "/React-Tailwind_Dota2RosterNameChange/static/media/alchemist.6c65cb0d1cca140cea5e.jpeg",
     "static/media/Mars_icon.png": "/React-Tailwind_Dota2RosterNameChange/static/media/Mars_icon.3c398ba1b8927092b594.png",
     "static/media/bambi.jpeg": "/React-Tailwind_Dota2RosterNameChange/static/media/bambi.fbafc177f41055856882.jpeg",
@@ -75,10 +78,10 @@
     "static/media/Manny.png": "/React-Tailwind_Dota2RosterNameChange/static/media/Manny.34e8afbeffff099f8b2e.png",
     "index.html": "/React-Tailwind_Dota2RosterNameChange/index.html",
     "main.a9af8fd2.css.map": "/React-Tailwind_Dota2RosterNameChange/static/css/main.a9af8fd2.css.map",
-    "main.4bd766bc.js.map": "/React-Tailwind_Dota2RosterNameChange/static/js/main.4bd766bc.js.map"
+    "main.95424029.js.map": "/React-Tailwind_Dota2RosterNameChange/static/js/main.95424029.js.map"
   },
   "entrypoints": [
     "static/css/main.a9af8fd2.css",
-    "static/js/main.4bd766bc.js"
+    "static/js/main.95424029.js"
   ]
 }
