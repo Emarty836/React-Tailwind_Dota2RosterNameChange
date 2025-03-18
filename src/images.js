@@ -43,6 +43,7 @@ import invoker from './img/Invoker_icon.png';
 import io from './img/io.png';
 import jakiro from './img/Jakiro_icon.png';
 import juggernaut from './img/Juggernaut_icon.png';
+import kez from './img/kez_icon.png';
 import KOTL from './img/Keeper_of_the_Light_icon.png';
 import kunkka from './img/kunkka.png';
 import legion from './img/Legion_Commander_icon.png';
@@ -83,6 +84,7 @@ import pugna from './img/Pugna_icon.png';
 import QoP from './img/Queen_of_Pain_icon.png';
 import razor from './img/Razor_icon.png';
 import riki from './img/Riki_icon.png';
+import ringmaster from './img/ringmaster.png';
 import rubick from './img/Rubick_icon.png';
 import sandKing from './img/Sand_King_icon.png';
 import shadowDemon from './img/Shadow_Demon_icon.png';
@@ -132,6 +134,7 @@ import butters from './img/butters.jpeg';
 import chewy from './img/chewy.jpeg';
 import davion from './img/Dota-anime-Dragons-Blood-Dragon-Knight-Netflix.jpeg';
 import elsa from './img/elsa.jpeg';
+import falco from './img/falco.png';
 import generalGrievous from './img/General_Grievous.png';
 import genie from './img/genie.jpeg';
 import groot from './img/groot.png';
@@ -158,12 +161,13 @@ import steveBuscemi from './img/steve_buscemi.jpeg';
 import terry from './img/terry.png';
 import tony from './img/Tony.png';
 import torbjorn from './img/Torbjorn.png';
+import wonka from './img/willywonka.jpg';
 
 
 //Export Dota 2 Heroes
 export { alchemist, axe, bristleback, centaur, chaosknight, dawnbreaker, doom, dragonKnight, earthSpirit, earthShaker, elderTitan, huskar, kunkka, legion, lifestealer, mars, nightStalker, ogreMagi, omniknight, primal, pudge, slardar, spiritBreaker, sven, tidehunter, tiny, treant, tusk, underlord, undying, wraithKing};
-export { antiMage, arcWarden, bloodseeker, bounty, clinkz, drowRanger, emberSpirit, facelessVoid, gyrocopter, hoodwink, juggernaut, luna, medusa, meepo, monkeyKing, morphling, nagaSiren, PA, PL, razor, riki, shadowFiend, slark, sniper, spectre, TA, terrorblade, trollWarlord, ursa, viper, weaver};
-export { AA, CM, deathProphet, disruptor, enchantress, grimstroke, jakiro, KOTL, leshrac, lich, lina, lion, muerta, natures, necrophos, oracle, OD, puck, pugna, QoP, rubick, shadowDemon, shadowShaman, silencer, skywrath, stormSpirit, tinker, warlock, witchDoctor, zeus};
+export { antiMage, arcWarden, bloodseeker, bounty, clinkz, drowRanger, emberSpirit, facelessVoid, gyrocopter, hoodwink, juggernaut, kez, luna, medusa, meepo, monkeyKing, morphling, nagaSiren, PA, PL, razor, riki, shadowFiend, slark, sniper, spectre, TA, terrorblade, trollWarlord, ursa, viper, weaver};
+export { AA, CM, deathProphet, disruptor, enchantress, grimstroke, jakiro, KOTL, leshrac, lich, lina, lion, muerta, natures, necrophos, oracle, OD, puck, pugna, QoP, ringmaster, rubick, shadowDemon, shadowShaman, silencer, skywrath, stormSpirit, tinker, warlock, witchDoctor, zeus};
 export { abaddon, bane, batrider, beastmaster, brewmaster, broodmother, chen, clockwerk, darkSeer, darkWillow, dazzle, engima, invoker, io, loneDruid, lycan, magnus, marci, mirana, nyx, pangolier, pheonix, sandKing, snapfire, techies, timbersaw, vengeful, venomancer, visage, voidSpirit, windranger, winterWyvern};
 //Export look-alike
-export { ashoka, bambi, butters, chewy, davion, elsa, generalGrievous, genie, groot, hopps, ironGiant, panda, liShang, liamNeeson, lucius, majinBuu, manny, meowth, merlin, obiwan, ceb, pharah, pussNboots, roadhog, rock, scorpion, shaiapouf, shrek, steveBuscemi, terry, tony, torbjorn};
+export { ashoka, bambi, butters, chewy, davion, elsa, falco, generalGrievous, genie, groot, hopps, ironGiant, panda, liShang, liamNeeson, lucius, majinBuu, manny, meowth, merlin, obiwan, ceb, pharah, pussNboots, roadhog, rock, scorpion, shaiapouf, shrek, steveBuscemi, terry, tony, torbjorn, wonka};

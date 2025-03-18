@@ -5,11 +5,11 @@ import ToggleButton from './ToggleButton';
 import FilterButtons from './FilterButtons';
 // Imported Dota 2 Heroes by type
 import { alchemist, axe, bristleback, centaur, chaosknight, dawnbreaker, doom, dragonKnight, earthSpirit, earthShaker, elderTitan, huskar, kunkka, legion, lifestealer, mars, nightStalker, ogreMagi, omniknight, primal, pudge, slardar, spiritBreaker, sven, tidehunter, tiny, treant, tusk, underlord, undying, wraithKing, pharah} from './images';
-import { antiMage, arcWarden, bloodseeker, bounty, clinkz, drowRanger, emberSpirit, facelessVoid, gyrocopter, hoodwink, juggernaut, luna, medusa, meepo, monkeyKing, morphling, nagaSiren, PA, PL, razor, riki, shadowFiend, slark, sniper, spectre, TA, terrorblade, trollWarlord, ursa, viper, weaver} from './images';
-import { AA, CM, deathProphet, disruptor, enchantress, grimstroke, jakiro, KOTL, leshrac, lich, lina, lion, muerta, natures, necrophos, oracle, OD, puck, pugna, QoP, rubick, shadowDemon, shadowShaman, silencer, skywrath, stormSpirit, tinker, warlock, witchDoctor, zeus} from './images';
+import { antiMage, arcWarden, bloodseeker, bounty, clinkz, drowRanger, emberSpirit, facelessVoid, gyrocopter, hoodwink, juggernaut, kez, luna, medusa, meepo, monkeyKing, morphling, nagaSiren, PA, PL, razor, riki, shadowFiend, slark, sniper, spectre, TA, terrorblade, trollWarlord, ursa, viper, weaver} from './images';
+import { AA, CM, deathProphet, disruptor, enchantress, grimstroke, jakiro, KOTL, leshrac, lich, lina, lion, muerta, natures, necrophos, oracle, OD, puck, pugna, QoP, ringmaster, rubick, shadowDemon, shadowShaman, silencer, skywrath, stormSpirit, tinker, warlock, witchDoctor, zeus} from './images';
 import { abaddon, bane, batrider, beastmaster, brewmaster, broodmother, chen, clockwerk, darkSeer, darkWillow, dazzle, engima, invoker, io, loneDruid, lycan, magnus, marci, mirana, nyx, pangolier, pheonix, sandKing, snapfire, techies, timbersaw, vengeful, venomancer, visage, voidSpirit, windranger, winterWyvern} from './images';
 // Imported Fictonal charactors that look like dota 2 heroes
-import { ashoka, bambi, butters, chewy, davion, elsa, generalGrievous, genie, groot, hopps, ironGiant, panda, liShang, liamNeeson, lucius, majinBuu, manny, meowth, merlin, obiwan, ceb, pussNboots, roadhog, rock, scorpion, shaiapouf, shrek, steveBuscemi, terry, tony, torbjorn} from './images';
+import { ashoka, bambi, butters, chewy, davion, elsa, falco, generalGrievous, genie, groot, hopps, ironGiant, panda, liShang, liamNeeson, lucius, majinBuu, manny, meowth, merlin, obiwan, ceb, pussNboots, roadhog, rock, scorpion, shaiapouf, shrek, steveBuscemi, terry, tony, torbjorn, wonka} from './images';
 
 const App = () => {
 
@@ -160,6 +160,8 @@ const App = () => {
   const [MarciT, setMarci] = useState();
   const [PrimalBeastT, setPrimalBeast] = useState();
   const [MuertaT, setMuerta] = useState();
+  const [RingmasterT, setRingmaster] = useState();
+  const [KezT, setKez] = useState();
 
   
 
@@ -288,10 +290,12 @@ useEffect(() => {
       setVoidSpirit(data[117].localized_name);
       setSnapfire(data[118].localized_name);
       setMars(data[119].localized_name);
-      setDawnbreaker(data[120].localized_name);
-      setMarci(data[121].localized_name);
-      setPrimalBeast(data[122].localized_name);
-      setMuerta(data[123].localized_name);
+      setDawnbreaker(data[121].localized_name);
+      setMarci(data[122].localized_name);
+      setPrimalBeast(data[123].localized_name);
+      setMuerta(data[124].localized_name);
+      setRingmaster(data[120].localized_name);
+      setKez(data[125].localized_name);
       
       // console.log(data);
       
@@ -340,6 +344,7 @@ useEffect(() => {
             <div className={filterHealer ? 'filterHighlight frame' : 'frame'}><img  src={kunkka} alt={showImage ? 'image 2' : 'image 1'}/><p>{KunkkaT}</p></div>
             <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img   src={showImage ? pharah: legion} alt={showImage ? 'image 2' : 'image 1'}/><p>{LegionT}</p></div>
             <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img   src={lifestealer} alt={showImage ? 'image 2' : 'image 1'}/><p>{LifestealerT}</p></div>
+            <div className={filterHealer ? 'filterHighlight frame ' : 'frame'}><img   src={marci} alt={showImage ? 'image 2' : 'image 1'}/><p>{MarciT}</p></div>
             <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img   src={mars} alt={showImage ? 'image 2' : 'image 1'}/><p>{MarsT}</p></div>
             <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img   src={nightStalker} alt={showImage ? 'image 2' : 'image 1'}/><p>{NightStalkerT}</p></div>
             <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'}><img   src={showImage ? majinBuu: ogreMagi} alt={showImage ? 'image 2' : 'image 1'}/><p>{OgreMagiT}</p></div>
@@ -369,6 +374,7 @@ useEffect(() => {
           <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'} ><img src={gyrocopter} alt={showImage ? 'image 2' : 'image 1'}/><p>{GyrocopterT}</p></div>
           <div className={filterCarry || filterHealer  ? 'filterHighlight frame ' : 'frame'} ><img src={showImage ? hopps : hoodwink} alt={showImage ? 'image 2' : 'image 1'}/><p>{HoodwinkT}</p></div>
           <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'} ><img src={juggernaut} alt={showImage ? 'image 2' : 'image 1'}/><p>{JuggernautT}</p></div>
+          <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'} ><img src={showImage ? falco : kez} alt={showImage ? 'image 2' : 'image 1'}/><p>{KezT}</p></div>
           <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'} ><img src={luna} alt={showImage ? 'image 2' : 'image 1'}/><p>{LunaT}</p></div>
           <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'} ><img src={medusa} alt={showImage ? 'image 2' : 'image 1'}/><p>{MedusaT}</p></div>
           <div className={filterSupport || filterHealer  ? 'filterHighlight frame ' : 'frame'} ><img src={showImage ? steveBuscemi : meepo} alt={showImage ? 'image 2' : 'image 1'}/><p>{MeepoT}</p></div>
@@ -413,6 +419,7 @@ useEffect(() => {
           <div className={filterCarry || filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={puck} alt={showImage ? 'image 2' : 'image 1'}/><p>{PuckT}</p></div>
           <div className={filterCarry || filterSupport ? 'filterHighlight frame ' : 'frame'}><img  src={pugna} alt={showImage ? 'image 2' : 'image 1'}/><p>{PugnaT}</p></div>
           <div className={filterSupport || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={QoP} alt={showImage ? 'image 2' : 'image 1'}/><p>{QueenOfPainT}</p></div>
+          <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={showImage ? wonka : ringmaster} alt={showImage ? 'image 2' : 'image 1'}/><p>{RingmasterT}</p></div>
           <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={rubick} alt={showImage ? 'image 2' : 'image 1'}/><p>{RubickT}</p></div>
           <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={shadowDemon} alt={showImage ? 'image 2' : 'image 1'}/><p>{ShadowDemonT}</p></div>
           <div className={filterCarry || filterHealer ? 'filterHighlight frame ' : 'frame'}><img  src={showImage ? scorpion : shadowShaman} alt={showImage ? 'image 2' : 'image 1'}/><p>{ShadowShamanT}</p></div>
